@@ -5,5 +5,5 @@ Numerical solution of [advection equation](http://en.wikipedia.org/wiki/Advectio
 
 To be done:
 - [x] MPI
-- [ ] OMP
+- [x] OMP
 - [ ] Pthreads
