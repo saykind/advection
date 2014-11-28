@@ -27,7 +27,7 @@ int main(int argc, char *argv[]) {
         MPI_Comm_size(MPI_COMM_WORLD, &size);
         MPI_Comm_rank(MPI_COMM_WORLD, &rank);
 
-	printf("size = %d\n", size);
+	printf("%d\t", size);
 	int N;
 	if (argc > 1) {sscanf(argv[1],"%d", &N);} else {N = 10000;}
 	int M = MN*N-1;
@@ -63,10 +63,10 @@ int main(int argc, char *argv[]) {
 		MPI_Recv((void *) (u+(size-1)*n), n + N%size, MPI_DOUBLE, size-1, 1, MPI_COMM_WORLD, MPI_STATUS_IGNORE);
 	}
 	/* main body */
-	if (!rank) {time_end = MPI_Wtime(); printf("%.3lf\t", (time_end-time_start));}
+	if (!rank) {time_end = MPI_Wtime(); printf("%.3lf\n", (time_end-time_start));}
 	//if (!rank) plot(gpp, u, N);
 	//if (!rank) pclose(gpp);
-	if (!rank) printf("%.2lfe-3\t", 1e3*dx*residual(u, N));
+	//if (!rank) printf("%.2lfe-3\t", 1e3*dx*residual(u, N));
 	MPI_Finalize();
 	return 0;
 }
