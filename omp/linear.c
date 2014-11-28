@@ -36,7 +36,7 @@ int main(int argc, char *argv[]) {
 	//plot(gpp, u, N);
 	double time = omp_get_wtime();
 #pragma omp parallel\
-	defaul(shared)\
+	default(shared)\
 	shared(u) private(j, i)
 {
 	for (j = 0; j < M; j++) {
