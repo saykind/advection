@@ -6,4 +6,4 @@ Numerical solution of [advection equation](http://en.wikipedia.org/wiki/Advectio
 To be done:
 - [x] MPI
 - [x] OMP
-- [ ] Pthreads
+- [x] Pthreads
